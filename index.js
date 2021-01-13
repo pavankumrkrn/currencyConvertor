@@ -19,7 +19,10 @@ function appendTable(currencies, num, val) {
             let td1 = createElement('td', 'text-center');
             td1.innerText = i;
             let td2 = createElement('td', 'text-center');
-            td2.innerText = (currencies[i] * num).toFixed(2);
+            if(obj[i] !== undefined)
+            td2.innerText = (currencies[i] * num).toFixed(2) + ' ' +obj[i];
+            else 
+            td2.innerText = (currencies[i] * num).toFixed(2)
             tr.append(td, td1, td2);
             document.getElementById('convertedValues').append(tr)
         }
